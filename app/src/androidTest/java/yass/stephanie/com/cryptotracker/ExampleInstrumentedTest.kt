@@ -1,4 +1,4 @@
-package yass.stephanie.com.crypto_tracker
+package yass.stephanie.com.cryptotracker
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

@@ -1,4 +1,4 @@
-package yass.stephanie.com.crypto_tracker
+package yass.stephanie.com.cryptotracker
 
 import org.junit.Test
 
