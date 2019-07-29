@@ -5,17 +5,16 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
         tools:background="@android:color/darker_gray">
 
     <ImageView
             android:id="@+id/currency_icon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
             app:layout_constraintTop_toTopOf="@id/currency_short_text"
             app:layout_constraintBottom_toBottomOf="@id/currency_long_text"
-            android:background="@color/colorAccent"/>
+            android:background="@drawable/ic_wallet"/>
 
     <TextView
             android:id="@+id/currency_short_text"
@@ -23,11 +22,12 @@
             android:layout_height="wrap_content"
             android:text="ETH"
             android:layout_marginLeft="20dp"
+            android:textColor="#000"
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
             app:layout_constraintStart_toEndOf="@id/currency_icon"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:fontFamily="@font/roboto_mono_bold"/>
 
 
     <TextView
@@ -35,8 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="6.34%"
+            android:textSize="10dp"
+            android:fontFamily="@font/roboto_mono_bold"
             android:layout_marginLeft="20dp"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/currency_short_text"
             app:layout_constraintTop_toTopOf="@id/currency_short_text"
             app:layout_constraintBottom_toBottomOf="@id/currency_short_text"/>
@@ -56,13 +57,46 @@
             android:id="@+id/current_holding_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="£7455000"
-            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/currency_short_text"
             app:layout_constraintBottom_toBottomOf="@id/currency_short_text"
-    />
+            android:fontFamily="@font/roboto_light"/>
 
+
+    <TextView
+            android:id="@+id/number_of_crypto_held"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10.2 ETH"
+            app:layout_constraintBaseline_toBaselineOf="@id/currency_long_text"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_holding_value"
+            app:layout_constraintBottom_toBottomOf="@id/currency_short_text"
+        />
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#ddd"/>
+
+    <android.support.constraint.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+    <android.support.constraint.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
 
 </android.support.constraint.ConstraintLayout>
