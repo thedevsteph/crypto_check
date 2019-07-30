@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">crypto_tracker</string>
     <string name="sample_news_text">Here are 5 tips to manage your team more productively</string>
+    <string name="sample_news_desc_text">Tim Sanda provides five fascinating ways to increase productivity</string>
 </resources>
