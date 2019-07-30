@@ -1,13 +1,19 @@
 package yass.stephanie.com.cryptotracker
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(),
+    View.OnClickListener {
 
+    companion object {
+        lateinit var context: Context
+    }
 
     class HomeViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val currencyLongText: TextView = view.findViewById(R.id.currency_long_text)
@@ -18,10 +24,12 @@ class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.HomeViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_homescreen_screen, parent, false)
+        view.setOnClickListener(this)
         return HomeViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
+        context = holder.view.context
         holder.currencyLongText.text = data[position].longName
         holder.currencyShortText.text = data[position].abbreviatedName
         holder.percentagePriceChange.text = "${data[position].hourlyPercentageChange}%"
@@ -46,6 +54,11 @@ class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapte
     private fun stringProvider(holder: HomeViewHolder, colorInt: Int) {
         val color = holder.itemView.context.getColor(colorInt)
         holder.percentagePriceChange.setTextColor(color)
+    }
+
+    override fun onClick(view: View?) {
+        var intent = Intent(context, NewsActivity::class.java)
+        view?.let { it.context?.startActivity(intent) }
     }
 
 

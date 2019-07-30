@@ -21,12 +21,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewManager: RecyclerView.LayoutManager
 
 
+    //mock data
+    var bitcoin = Currencies("BTC", "34.444", "Bitcoin", 34.33)
+    var ethereum = Currencies("ETH", "134.03", "Ethereum", 34.33)
+    var fakeData : ArrayList<Currencies> = arrayListOf(bitcoin, ethereum, ethereum, bitcoin, ethereum)
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getCurrencyData()
+        //getCurrencyData()
         setContentView(R.layout.activity_main)
         viewManager = LinearLayoutManager(this)
-        viewAdapter = HomeAdapter(currencyListData)
+        viewAdapter = HomeAdapter(fakeData)
 
         recyclerView = findViewById<RecyclerView>(R.id.home_recycler_view).apply {
             setHasFixedSize(true)

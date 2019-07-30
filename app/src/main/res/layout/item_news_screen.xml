@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        tools:background="@android:color/darker_gray">
+        android:background="@color/whiteBoy">
 
     <ImageView
             android:id="@+id/news_image"
@@ -36,10 +36,11 @@
             tools:text="@string/sample_news_text"
             android:layout_marginLeft="20dp"
             android:textSize="10dp"
+            android:lineSpacingExtra="1dp"
             android:scrollHorizontally="true"
             android:ellipsize="end"
             android:maxLines="1"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toEndOf="@id/news_image"
             app:layout_constraintTop_toBottomOf="@+id/news_header_text"
             android:fontFamily="@font/roboto_thin"/>
@@ -71,6 +72,7 @@
             app:layout_constraintTop_toBottomOf="@id/current_holding_value"
             app:layout_constraintBottom_toBottomOf="@id/currency_short_text"
             android:textSize="10sp"
+            android:padding="4dp"
             android:fontFamily="@font/roboto_mono"/>
 
     <android.support.constraint.Guideline

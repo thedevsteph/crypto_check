@@ -12,7 +12,12 @@ class NewsActivity : AppCompatActivity() {
     private lateinit var viewManager: RecyclerView.LayoutManager
 
     //mock data
-    var article1 = NewsArticle("one", "two", "three", "four", "five", "six")
+    var article1 = NewsArticle("one",
+        "Here are 5 things to help you get better",
+        "This is a beautiful thing bro",
+        "four",
+        "14 December 2018",
+        "six")
     var newsList : ArrayList<NewsArticle> = arrayListOf(article1, article1, article1, article1, article1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
