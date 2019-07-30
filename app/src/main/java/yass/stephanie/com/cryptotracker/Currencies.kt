@@ -1,8 +1,9 @@
 package yass.stephanie.com.cryptotracker
 
 data class Currencies(
-    val abbreviatedName: String,
-    val currentPrice: String,
-    val icon: Int,
-    val longName: String
+    var abbreviatedName: String? = null,
+    var currentPrice: String? = "0",
+    var longName: String? = null,
+    var hourlyPercentageChange: Double? = 0.0,
+    var quantity: Double? = 564.0
 )

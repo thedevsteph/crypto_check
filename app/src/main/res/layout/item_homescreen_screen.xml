@@ -18,9 +18,9 @@
 
     <TextView
             android:id="@+id/currency_short_text"
-            android:layout_width="wrap_content"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="ETH"
+            tools:text="ETH"
             android:layout_marginLeft="20dp"
             android:textColor="#000"
             android:textSize="20dp"
@@ -34,10 +34,10 @@
             android:id="@+id/percentage_price_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6.34%"
-            android:textSize="10dp"
-            android:fontFamily="@font/roboto_mono_bold"
-            android:layout_marginLeft="20dp"
+            tools:text="6.34%"
+            android:textSize="12dp"
+            android:fontFamily="@font/roboto_mono"
+            android:layout_marginLeft="5dp"
             app:layout_constraintStart_toEndOf="@id/currency_short_text"
             app:layout_constraintTop_toTopOf="@id/currency_short_text"
             app:layout_constraintBottom_toBottomOf="@id/currency_short_text"/>
@@ -46,7 +46,8 @@
             android:id="@+id/currency_long_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ethereum"
+            tools:text="Ethereum"
+            android:inputType="textCapWords"
             android:layout_marginLeft="20dp"
             app:layout_constraintStart_toEndOf="@id/currency_icon"
             android:layout_marginTop="5dp"
@@ -58,8 +59,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18dp"
-            android:text="£7455000"
+            tools:text="£7455000"
             android:textStyle="bold"
+            android:lineSpacingExtra="1dp"
             app:layout_constraintEnd_toStartOf="@id/guideline_end"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/currency_short_text"
@@ -71,14 +73,14 @@
             android:id="@+id/number_of_crypto_held"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10.2 ETH"
+            tools:text="Price"
             app:layout_constraintBaseline_toBaselineOf="@id/currency_long_text"
             android:layout_marginTop="5dp"
             app:layout_constraintEnd_toStartOf="@id/guideline_end"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/current_holding_value"
             app:layout_constraintBottom_toBottomOf="@id/currency_short_text"
-        />
+    />
 
     <View
             android:layout_width="match_parent"
@@ -90,13 +92,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="20dp" />
+            app:layout_constraintGuide_end="30dp"/>
 
     <android.support.constraint.Guideline
             android:id="@+id/guideline_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+            app:layout_constraintGuide_begin="30dp"/>
 
 </android.support.constraint.ConstraintLayout>

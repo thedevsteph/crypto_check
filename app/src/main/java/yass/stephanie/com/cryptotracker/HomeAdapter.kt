@@ -24,14 +24,17 @@ class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.currencyLongText.text = data[position].longName
         holder.currencyShortText.text = data[position].abbreviatedName
-        holder.percentagePriceChange.text = "45.40%"
-        holder.currentHoldingValue.text = "£${data[position].currentPrice}"
+        holder.percentagePriceChange.text = "${data[position].hourlyPercentageChange}%"
+        holder.currentHoldingValue.text = "$${data[position].currentPrice}"
 
-        //change the background - temporary code
-        when {
-            position % 2 == 0 -> stringProvider(holder, R.color.abc_btn_colored_borderless_text_material)
-            position % 5 == 0 -> stringProvider(holder, R.color.error_color_material_light)
-            else -> null
+        var percentageChange = data[position].hourlyPercentageChange
+
+        percentageChange?.let {
+            when {
+                percentageChange > 0 -> stringProvider(holder, R.color.brightGreen)
+                percentageChange < 0 -> stringProvider(holder, R.color.brightRed)
+                else -> null
+            }
         }
 
     }
@@ -40,11 +43,10 @@ class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapte
         return data.size
     }
 
-    private fun stringProvider(holder: HomeViewHolder, colorInt: Int){
+    private fun stringProvider(holder: HomeViewHolder, colorInt: Int) {
         val color = holder.itemView.context.getColor(colorInt)
         holder.percentagePriceChange.setTextColor(color)
     }
-
 
 
 }
