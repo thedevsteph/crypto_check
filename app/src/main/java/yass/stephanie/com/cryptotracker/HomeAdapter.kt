@@ -60,7 +60,7 @@ class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapte
     override fun onClick(view: View?) {
         var intent = Intent(context, NewsActivity::class.java)
         var stringTextView = view?.findViewById<TextView>(R.id.currency_long_text)
-        intent.putExtra(CURRENCY_NAME, stringTextView?.text)
+        intent.putExtra(CURRENCY_NAME, stringTextView?.text.toString())
         view?.let { it.context.startActivity(intent) }
     }
 
