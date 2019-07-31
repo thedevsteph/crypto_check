@@ -13,11 +13,11 @@ A user can click on an article and get directed to a web page with the full info
 
 ### Snap shots
 
-![Alt text](Screenshot_20190731-200647_crypto_tracker.jpg | width=100)
+![Alt text](./Screenshot_20190731-200647_crypto_tracker.jpg | width=100)
 
-![Alt text](Screenshot_20190731-200655_crypto_tracker.jpg| width=100)
+![Alt text](./Screenshot_20190731-200655_crypto_tracker.jpg| width=100)
 
-![Alt text](Screenshot_20190731-200713_Samsung Internet.jpg | width=100)
+![Alt text](./Screenshot_20190731-200713_Samsung Internet.jpg | width=100)
 
 ## Authors
 Dev Steph
