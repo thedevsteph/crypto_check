@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.ImageView
 import android.widget.Toast
 import com.google.gson.Gson
 import com.google.gson.JsonObject
@@ -29,18 +30,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //getCurrencyData()
+        getCurrencyData()
         setContentView(R.layout.activity_main)
         viewManager = LinearLayoutManager(this)
-        viewAdapter = HomeAdapter(fakeData)
+        viewAdapter = HomeAdapter(currencyListData)
 
         recyclerView = findViewById<RecyclerView>(R.id.home_recycler_view).apply {
             setHasFixedSize(true)
             layoutManager = viewManager
             adapter = viewAdapter
         }
-
-
     }
 
     private fun getCurrencyData() {
@@ -105,7 +104,6 @@ class MainActivity : AppCompatActivity() {
         private const val BASE_URL = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest/"
         private var currencyListData: ArrayList<Currencies> = arrayListOf()
         private const val QUOTE: String = "quote"
-        private const val NAME: String = "name"
         private const val SYMBOL: String = "symbol"
         private const val SLUG: String = "slug"
         private const val PERCENTAGE_CHANGE_1H: String = "percent_change_1h"

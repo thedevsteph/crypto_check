@@ -1,13 +1,19 @@
 package yass.stephanie.com.cryptotracker
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
 
 class NewsAdapter(private val data: ArrayList<NewsArticle>) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+
+    companion object {
+        private lateinit var context: Context
+    }
 
 
     class NewsViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -24,11 +30,20 @@ class NewsAdapter(private val data: ArrayList<NewsArticle>) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-//        holder.newsImage.text = data[position].imageUrl
+        context = holder.view.context
+        var imageUrl: String? = data[position].imageUrl
+        imageUrl?.let { getImage(imageUrl, holder.newsImage) }
         holder.newsHeaderText.text = data[position].title
-        holder.newsTag.text = data[position].tag
+        holder.newsTag.text = "NEW"
         holder.newsDate.text = data[position].date
         holder.descriptionText.text = data[position].description
+    }
+
+
+    private fun getImage(url: String, view: ImageView) {
+        Picasso.with(context)
+            .load(url)
+            .into(view)
     }
 
     override fun getItemCount(): Int {

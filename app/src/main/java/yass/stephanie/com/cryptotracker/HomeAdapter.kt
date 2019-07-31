@@ -13,6 +13,7 @@ class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapte
 
     companion object {
         lateinit var context: Context
+        private const val CURRENCY_NAME = "CURRENCY_NAME"
     }
 
     class HomeViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -58,7 +59,9 @@ class HomeAdapter(private val data: ArrayList<Currencies>) : RecyclerView.Adapte
 
     override fun onClick(view: View?) {
         var intent = Intent(context, NewsActivity::class.java)
-        view?.let { it.context?.startActivity(intent) }
+        var stringTextView = view?.findViewById<TextView>(R.id.currency_long_text)
+        intent.putExtra(CURRENCY_NAME, stringTextView?.text)
+        view?.let { it.context.startActivity(intent) }
     }
 
 
