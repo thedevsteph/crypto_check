@@ -13,7 +13,7 @@ A user can click on an article and get directed to a web page with the full info
 
 ### Snap shots
 
-![Alt text](https://github.com/thedevsteph/crypto_check/blob/master//Screenshot_20190731-200647_crypto_tracker.jpg | width=100)
+![Screenshot](https://github.com/thedevsteph/crypto_check/blob/master//Screenshot_20190731-200647_crypto_tracker.jpg | width=100)
 
 ![Alt text](./Screenshot_20190731-200655_crypto_tracker.jpg| width=100)
 
